@@ -1,0 +1,8 @@
+.viewport {
+    width: 500px; /* Adjust the width as needed */
+    height: 300px; /* Adjust the height as needed */
+    border: 1px solid #ccc; /* Optional: Add a border */
+    overflow: hidden; /* Hide any overflow */
+    position: relative; /* Enable positioning of child elements */
+  }
+  
