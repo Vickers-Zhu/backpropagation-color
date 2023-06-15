@@ -5,7 +5,7 @@ const Test = () => {
   const [backpropagationData, setBackpropagationData] = useState("");
   useEffect(() => {
     axios
-      .get("http://localhost:3001/backpropagation-data")
+      .get("http://localhost:3001/api/backpropagation-data")
       .then((response) => {
         setBackpropagationData(response.data);
       })
