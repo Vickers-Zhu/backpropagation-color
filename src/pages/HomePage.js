@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Test, Viewport, logTestMessage } from "../components";
 
 const HomePage = () => {
-  React.useEffect(() => {
+  useEffect(() => {
     logTestMessage();
-  });
+  }, []);
   return (
     <div>
       <Test />

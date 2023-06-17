@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { HomePage } from "./pages";
-import { logTestMessage } from "./components";
+import React from "react";
+import AppRouter from "./router";
 
 const App = () => {
-  useEffect(() => {}, []);
   return (
     <div>
-      <HomePage />
+      <AppRouter />
     </div>
   );
 };
