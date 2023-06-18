@@ -29,8 +29,8 @@ class NeuralNetwork {
     return weights;
   }
   forwardPass(inputData) {
-    // Calculate the activations of the hidden layer
     this.hiddenLayerActivations = [];
+    // Calculate the activations of the hidden layer
     for (let i = 0; i < this.hiddenNodes; i++) {
       let activation = 0;
       for (let j = 0; j < this.inputNodes; j++) {
@@ -56,6 +56,7 @@ class NeuralNetwork {
   train(inputData, targetOutput, learningRate) {
     // Perform forward pass
     const outputActivations = this.forwardPass(inputData);
+
     // Calculate the errors in the output layer
     const outputErrors = outputActivations.map(
       (outputActivation, index) =>
@@ -90,6 +91,14 @@ class NeuralNetwork {
           learningRate * hiddenErrors[i] * inputData[j];
       }
     }
+    // console.log("InputHidden", this.weightsInputHidden);
+    // console.log("OutputHidden", this.weightsHiddenOutput);
+    // console.log("LayerHidden", this.hiddenLayerActivations);
+    const confidenceRates = outputActivations.map(
+      (outputActivation, index) =>
+        1 - Math.abs(targetOutput[index] - outputActivation)
+    );
+    return confidenceRates;
   }
 }
 

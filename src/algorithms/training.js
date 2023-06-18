@@ -37,13 +37,16 @@ class ColorSynthesisModel {
     ];
 
     const learningRate = 0.1;
-    const epochs = 1000;
+    const epochs = 900;
 
     // Train the neural network
     for (let epoch = 0; epoch < epochs; epoch++) {
       for (const data of trainingData) {
         const { input, output } = data;
-        this.neuralNetwork.train(input, output, learningRate);
+        console.log(
+          "Confidence Rates: ",
+          this.neuralNetwork.train(input, output, learningRate)
+        );
       }
     }
   }
